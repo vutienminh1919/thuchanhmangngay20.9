@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="addTxt()">
+<input type="button" id="buttonAdd" onclick="add()" value="Add">
+<input type="button" id="buttonDisplay" onclick="display()" value="Display">
+<div id="result"></div>
+<script>
+    let x = 0//  chỉ số truy cập tới các phần tử
+    let array = Array()// tạo mảng array
+
+    function add() {   // thêm phần tử vào mảng
+        array[x] = document.getElementById('addTxt()').value; //
+        alert('Element ' + array[x] + 'added at index ' + x);
+        x++ // tăng x theo số lượng phần tử đc thêm vào
+        document.getElementById('addTxt()').value = "";
+    }
+
+    function display() {  // hiện phần tử lên màn hình
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>
